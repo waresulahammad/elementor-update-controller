@@ -14,8 +14,11 @@ function disable_elementor_pro_update_check( $transient ) {
     return $transient;
 }
 
+
 // Hide Elementor Pro license activation message
 add_filter( 'elementor_pro/license/valid', '__return_true' );
+
+
 
 
 // Add custom CSS to hide Elementor Pro activation message in the WordPress Dashboard
@@ -24,6 +27,9 @@ function hide_elementor_pro_activation_message() {
         .e-notice.e-notice--extended {
             display: none !important;
         }
+		.notice.notice-warning.is-dismissible {
+		  display: none;
+		}
     </style>';
 }
 add_action( 'admin_head', 'hide_elementor_pro_activation_message' );
