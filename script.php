@@ -33,3 +33,10 @@ function hide_elementor_pro_activation_message() {
     </style>';
 }
 add_action( 'admin_head', 'hide_elementor_pro_activation_message' );
+
+
+// Hide Elementor License_submenu
+function hide_elementor_license_submenu() {
+    remove_submenu_page( 'elementor', 'elementor-license' );
+}
+add_action( 'admin_menu', 'hide_elementor_license_submenu', 999 );
