@@ -40,3 +40,20 @@ function hide_elementor_license_submenu() {
     remove_submenu_page( 'elementor', 'elementor-license' );
 }
 add_action( 'admin_menu', 'hide_elementor_license_submenu', 999 );
+
+
+
+
+function hide_elementor_connect_text() {
+    echo '<style>
+        .active_license a.elementor-plugins-gopro {
+            font-size: 0 !important;
+        }
+        .active_license a.elementor-plugins-gopro::after {
+            content: " "; /* This prevents layout shifts */
+            font-size: initial;
+        }
+    </style>';
+}
+add_action('admin_head', 'hide_elementor_connect_text');
+
